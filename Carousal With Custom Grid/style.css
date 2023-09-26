@@ -1,8 +1,8 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 /* ---------------------------------------   remember u need to make sure this is only for that div ----------------------------*/
 
 /*-----------------this body really not needed--------------------------*/
@@ -14,8 +14,6 @@ body {
   background: #f1f4fd;
 }
 /*----------------------------------------------------------------------------*/
-
-
 
 .slider-wrapper .image-list {
   display: grid;
@@ -85,15 +83,12 @@ body {
   bottom: -10px;
 }
 
-
-
-
 /*-------------------optional if u are using Bootstrap container element----------------- */
-.container1 {    /*used container1 so that it doesnt conflict with bootstrap */
+.container1 {
+  /*used container1 so that it doesnt conflict with bootstrap */
   max-width: 1400px;
   width: 99%; /*-------> this is the side margin how much u want */
 }
-
 
 /*Slider stuff */
 
@@ -126,8 +121,31 @@ body {
 
 .slider-wrapper .slide-button#prev-slide {
   left: -25px;
+  display: none; /*by default is is invisible but change it using JS !*/
 }
 
 .slider-wrapper .slide-button#next-slide {
   right: -25px;
+}
+
+/* Styles for mobile and tablets */
+@media only screen and (max-width: 1023px) {
+  .slider-wrapper .slide-button {
+    display: none !important;
+  }
+
+  .slider-wrapper .image-list {
+    gap: 10px;
+    margin-bottom: 15px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .slider-wrapper .image-list .image-item {
+    width: 280px;
+    height: 380px;
+  }
+
+  .slider-scrollbar .scrollbar-thumb {
+    width: 20%;
+  }
 }
